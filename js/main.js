@@ -12,12 +12,17 @@ const { createApp } = Vue;
     },
 
     mounted() {
-        this.startInterval = setInterval(() => {
-          this.NextImage();
-        }, 3000);
+        this.AutoPlay();
     },
 
     methods : {
+
+        AutoPlay(){
+            this.startInterval = setInterval(() => {
+                this.NextImage();
+            }, 3000);
+        },
+
         PreviousImage(){
             if(this.ActiveIndex === 0){
                 this.ActiveIndex = this.image.length - 1;
@@ -42,6 +47,8 @@ const { createApp } = Vue;
 
         stopInterval() {
             clearInterval(this.startInterval);
-          }
+        },
+
+
     }
   }).mount('#app')

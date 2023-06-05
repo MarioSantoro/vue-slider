@@ -17,15 +17,14 @@
             <h1 class="text-uppercase text-center m-0 p-3 text-white">Boolean Gaming</h1>
         </header>
         <main>
-            <div class="container-carousel position-relative text-white slider" >
+            <div class="container-carousel position-relative text-white slider" @mouseover="stopInterval" @mouseleave="AutoPlay">
                 <img :src="image[ActiveIndex]" alt="">
                 <i id="Pre-button" class="fa-solid fa-circle-arrow-left position-absolute top-50" @click="PreviousImage"></i>
                 <i id="Next-button" class="fa-solid fa-circle-arrow-right position-absolute top-50 end-0" @click="NextImage"></i>
                 <div class="thumbnails">
-                <img v-for="(item , index) in image" :src="item" alt="item" :class="ActiveIndex === index ? 'active' : ''" @click="goToImage(index)">
+                <img v-for="(item , index) in image" :src="item" alt="item" :class="ActiveIndex === index ? 'active' : ''" @click="goToImage(index)" >
                 </div>
             </div>
-            <button @click="stopInterval">Stop</button>
         </main>
     </div>
     <script src="js/main.js"></script>
