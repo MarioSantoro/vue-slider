@@ -1,4 +1,7 @@
+
+
 const { createApp } = Vue;
+
 
   createApp({
     data() {
@@ -6,7 +9,12 @@ const { createApp } = Vue;
         image : ["./img/01.webp" , "./img/02.webp" , "./img/03.webp" , "./img/04.webp" , "./img/05.webp"],
         ActiveIndex : 0,
       }
-      
+    },
+
+    mounted() {
+        this.startInterval = setInterval(() => {
+          this.NextImage();
+        }, 3000);
     },
 
     methods : {
@@ -30,6 +38,10 @@ const { createApp } = Vue;
 
         goToImage(ActiveIndex){
             this.ActiveIndex = ActiveIndex;
-        }
+        },
+
+        stopInterval() {
+            clearInterval(this.startInterval);
+          }
     }
   }).mount('#app')

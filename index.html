@@ -25,6 +25,7 @@
                 <img v-for="(item , index) in image" :src="item" alt="item" :class="ActiveIndex === index ? 'active' : ''" @click="goToImage(index)">
                 </div>
             </div>
+            <button @click="stopInterval">Stop</button>
         </main>
     </div>
     <script src="js/main.js"></script>
