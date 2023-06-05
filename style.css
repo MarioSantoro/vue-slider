@@ -18,18 +18,36 @@ header{
 
 div.container-carousel{
     width: 1200px;
-    height: 600px;
     margin: 0 auto;
-    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 1rem;
 }
 
-img{
+div.container-carousel>img{
     width: 100%;
-    height: 100%;
+    height: 670px;
     object-fit: cover;
     object-position: center;
     transition: all 1s;
 }
+
+div.thumbnails{
+    border-top: 3px solid black;
+}
+
+div.thumbnails img.active{
+    filter: brightness(150%);
+}
+
+div.thumbnails img{
+    width: 240px;
+    height: 100px;
+    object-fit: cover;
+    transition: all 1s;
+    filter: brightness(30%);
+}
+
+
 
 .title{
     width: 0;
