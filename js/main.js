@@ -6,7 +6,24 @@ const { createApp } = Vue;
   createApp({
     data() {
       return {
-        image : ["./img/01.webp" , "./img/02.webp" , "./img/03.webp" , "./img/04.webp" , "./img/05.webp"],
+        images : [
+            {
+               image: "./img/01.webp"
+            },
+            {
+                image: "./img/02.webp"
+             } , 
+             {
+                image: "./img/03.webp"
+             } , 
+             {
+                image: "./img/04.webp"
+             } , 
+             {
+                image: "./img/05.webp"
+             } , 
+        ],
+
         ActiveIndex : 0,
       }
     },
@@ -25,7 +42,7 @@ const { createApp } = Vue;
 
         PreviousImage(){
             if(this.ActiveIndex === 0){
-                this.ActiveIndex = this.image.length - 1;
+                this.ActiveIndex = this.images.length - 1;
             }else{
                 this.ActiveIndex--;
             }
@@ -33,7 +50,7 @@ const { createApp } = Vue;
         },
 
         NextImage(){
-            if(this.ActiveIndex === this.image.length - 1){
+            if(this.ActiveIndex === this.images.length - 1){
                 this.ActiveIndex = 0;
             }else{
                 this.ActiveIndex++;
