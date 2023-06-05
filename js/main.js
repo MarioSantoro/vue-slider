@@ -27,5 +27,9 @@ const { createApp } = Vue;
             }
             
         },
+
+        goToImage(ActiveIndex){
+            this.ActiveIndex = ActiveIndex;
+        }
     }
   }).mount('#app')

@@ -45,6 +45,7 @@ div.thumbnails img{
     object-fit: cover;
     transition: all 1s;
     filter: brightness(30%);
+    cursor: pointer;
 }
 
 
