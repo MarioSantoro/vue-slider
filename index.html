@@ -19,6 +19,8 @@
         <main>
             <div class="container-carousel position-relative text-white slider" @mouseover="stopInterval" @mouseleave="AutoPlay">
                 <img :src="images[ActiveIndex].image" alt="">
+                <h1 class="title">{{images[ActiveIndex].title}}</h1>
+                <p class="text fs-6">{{images[ActiveIndex].text}}</p>
                 <i id="Pre-button" class="fa-solid fa-circle-arrow-left position-absolute top-50" @click="PreviousImage"></i>
                 <i id="Next-button" class="fa-solid fa-circle-arrow-right position-absolute top-50 end-0" @click="NextImage"></i>
                 <div class="thumbnails">
